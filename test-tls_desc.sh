@@ -5,7 +5,9 @@ MAX=16
 # tls space consumed
 SZ=128
 
-CFLAGS="-mtls-dialect=gnu2 -DTLSSZ=$SZ"
+# gnu, gnu2, desc, trad
+DIALECT="trad"
+CFLAGS="-mtls-dialect=$DIALECT -DTLSSZ=$SZ"
 LDFLAGS="-fPIC -shared"
 GDFLAGS="-ftls-model=global-dynamic"
 IEFLAGS="-ftls-model=initial-exec"
