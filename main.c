@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 		asprintf(&c, "TMP%d", i);
 		p = dlsym(v, c);
 	}
-	asprintf(&c, "TMP%d", MAX);
+	asprintf(&c, "./tmp%d.so", MAX);
 	v = dlopen(c, RTLD_NOW);
 	if (!v) { printf("%s\n", dlerror()); abort(); }
 	asprintf(&c, "TMP%d", MAX);
